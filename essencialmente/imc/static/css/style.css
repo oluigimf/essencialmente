@@ -1,0 +1,167 @@
+*{
+    font-family: "Josefin Sans", sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    background-color: #CBF9BC;
+    row-gap: 265px;
+    padding: 0%;
+    border: 0%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo{
+    height: 85px;
+    width: 285px;
+    margin-left: 130px;
+    margin-top: 20px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+li{
+    margin: 28px;
+    font: Josefin Sans;
+    color: #666363;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+button{
+    margin-right: 130px;
+    margin-left: 55px;
+    background-color: #258E00;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: x-large;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 130px;
+    border-radius: 10%;
+
+}
+
+main{
+    background-color: #EBFDE5;
+    width: 100vw;
+    border: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.section_txt{
+    align-items: center;
+    justify-content: center;
+    width: 640px;
+    margin-top: 180px;
+}
+h2{
+    margin-left: 130px;
+    font-family: "Josefin Sans", sans-serif;
+    color: #666363;
+    font-size: xx-large;
+    
+}
+.main_btn{
+    margin-left: 130px;
+    width: 250px;
+    border-radius: 10%;
+    box-shadow: inset;
+}
+
+.section_img{
+    width: 910px;
+    height: 580px;
+}
+
+.main_img{
+    width: 125%;
+    height: 200%;
+    margin-right: 100px;
+    margin-top: 60px;
+}
+
+.pagina2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 75vh;
+    padding: 0%;
+    border: 0%;
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+.card{
+    border: solid #CBF9BC;
+    height: 470px;
+    width: 420px;
+    padding-bottom: 0%;
+    margin-left: 80px;
+    margin-top: 55px;
+    border-radius: 5%;
+}
+
+#card3{
+    margin-right: 80px;
+}
+
+p{
+    text-align: center;
+    color:#666363 ;
+}
+h1{
+    text-align: center;
+    color:#666363 ;
+}
+h3{
+    text-align: center;
+    color: #258E00;
+}
+
+.img_card{
+    align-content: center;
+}
+
+.btn_card{
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 30px;
+}
+
+footer{
+    background-color:#CBF9BC;
+    height: 35vh;
+    width: 100vw;
+}
+
+.h2_footer{
+    text-align: left;
+    margin-left: 60px;
+    padding-top: 30px;
+}
+.p_footer{
+    text-align: left;
+    margin-left: 60px;
+    font-size: larger;
+}
