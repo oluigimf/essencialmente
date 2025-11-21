@@ -2,10 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from imc.views import index 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('imc.urls')),   
+    path('', index), 
 ]
 
 if settings.DEBUG:
