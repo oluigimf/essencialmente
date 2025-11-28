@@ -26,3 +26,6 @@ def listar_cadastrados(request):
     else:
         cadastrados = AvaliarIMC.objects.all()
     return render(request, "ListarCadastradosIMC.html", {"cadastrados": cadastrados, "sexo_selecionado": sexo})
+
+def julia_zaffari(request):
+    return render(request, 'telaTesteJZ.html')
