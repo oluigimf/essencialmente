@@ -12,7 +12,7 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
-<body class="container">
+<body>
     <header>
         <figure id="fig_header">
             <img id="img_header" src="{% static 'images/logo.png' %}" alt="">
@@ -54,7 +54,7 @@
             </figure>
             <h3 class="titulo_card">Avaliação IMC</h3>
             <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic illum amet excepturi neque fugit? Animi qui dignissimos nemo quod soluta porro ab ullam obcaecati alias, numquam laboriosam ipsam voluptas aliquam.</p>
-            <button id="b3" class='btn'><a href="#">Avaliar</a></button>
+            <form action="{% url 'avaliar_imc' %}" method="GET"><button type="submit" class="btn_card">Avaliar</button></form> <!-- direciona pra tela de avaliacao de imc -->
         </section>
         <section class="cards">
             <figure class="fig_cards" >

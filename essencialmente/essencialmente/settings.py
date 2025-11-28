@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'essencialmente.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'essencialmente',
-        'USER': 'root',
-        'PASSWORD': '1234',
+        'USER': 'postgres',
+        'PASSWORD': 'metzdorf',
         'HOST': 'localhost',
-        'PORT': '3306'
+        'PORT': '5432'
     }
 }
 

@@ -8,9 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
-
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
+    
     <link rel="stylesheet" href="{% static 'css/avaliarIMC.css' %}">
   </head>
   <body>
@@ -19,16 +18,22 @@
 
       <form id="form-imc" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-
         {{ form.as_p }}
-
         <button type="submit" class="calcular-btn">Calcular</button>
       </form>
 
-      <div class="resultado">
-        <h2>Seu IMC é: <span id="resultado-imc"></span></h2>
-        <p id="explicacao"></p>
-      </div>
+      {% if imc %}
+        <div class="resultado">
+            <h2>Seu IMC é: <strong>{{ imc }}</strong></h2>
+            <p>Classificação: <strong>{{ classificacao }}</strong></p>
+
+            {% if avaliacao %}
+                <p><strong>Peso:</strong> {{ avaliacao.peso }} kg</p>
+                <p><strong>Altura:</strong> {{ avaliacao.altura }} m</p>
+                <img src="{{ avaliacao.foto.url }}" width="180">
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
   </body>
 </html>

@@ -10,7 +10,7 @@ class AvaliarIMC(models.Model):
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICES, null=False, blank=False)
     data_nascimento = models.DateField(null=False, blank=False)
     escola = models.CharField(max_length=150, null=False, blank=False)
-    peso = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, validators=[MinValueValidator(Decimal("0.1"))])
+    peso = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, validators=[MinValueValidator(Decimal("0.1"))])
     altura = models.DecimalField(max_digits=4, decimal_places=2, null=False, blank=False, validators=[MinValueValidator(Decimal("0.1"))])
     foto = models.ImageField(upload_to="imc_fotos/", null=False, blank=False)
     valor_imc = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False, editable=False)

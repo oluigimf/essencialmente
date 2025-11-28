@@ -1,4 +1,4 @@
-
+PC da escola:
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -10,12 +10,25 @@ DATABASES = {
     }
 }
 
+PC do Luigi (que nao come trans gostosa):
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'essencialmente',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+
+PC do Piccoli:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'essencialmente',
+        'USER': 'postgres',
+        'PASSWORD': 'metzdorf',
         'HOST': 'localhost',
         'PORT': '5432'
     }

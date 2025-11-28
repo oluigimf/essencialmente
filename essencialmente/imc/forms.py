@@ -11,7 +11,7 @@ class AvaliarIMCForm(forms.ModelForm):
             "sexo": forms.Select(attrs={"class": "input-field"}),
             "data_nascimento": forms.DateInput(attrs={"class": "input-field", "type": "date"}),
             "escola": forms.TextInput(attrs={"class": "input-field"}),
-            "peso": forms.NumberInput(attrs={"class": "input-field"}),
-            "altura": forms.NumberInput(attrs={"class": "input-field"}),
+            "peso": forms.NumberInput(attrs={"class": "input-field", "step": "0.01", "min": "0.1" }),
+            "altura": forms.NumberInput(attrs={"class": "input-field", "step": "0.01", "min": "0.1"}),
             "foto": forms.FileInput(attrs={"class": "input-field"}),
         }

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrados IMC</title>
+
+    <link rel="stylesheet" href="#">
+</head>
+<body>
+
+<div class="container">
+    <h1>Lista de Avaliações de IMC</h1>
+
+    <!-- FILTRO POR SEXO -->
+    <form method="GET" class="filtro-form">
+        <label>Filtrar por sexo:</label>
+        <select name="sexo" onchange="this.form.submit()">
+            <option value="">Todos</option>
+            <option value="M" {% if sexo_selecionado == 'M' %}selected{% endif %}>Masculino</option>
+            <option value="F" {% if sexo_selecionado == 'F' %}selected{% endif %}>Feminino</option>
+        </select>
+    </form>
+
+    <div class="lista">
+        {% for pessoa in cadastrados %}
+        <div class="card">
+            <img src="{{ pessoa.foto.url }}" alt="Foto" class="foto">
+
+            <div class="info">
+                <h2>{{ pessoa.nome }}</h2>
+                <p><strong>CPF:</strong> {{ pessoa.cpf }}</p>
+                <p><strong>Sexo:</strong> {{ pessoa.get_sexo_display }}</p>
+                <p><strong>Idade:</strong> {{ pessoa.data_nascimento }}</p>
+                <p><strong>Peso:</strong> {{ pessoa.peso }} kg</p>
+                <p><strong>Altura:</strong> {{ pessoa.altura }} m</p>
+                <p><strong>IMC:</strong> {{ pessoa.valor_imc }}</p>
+                <p><strong>Classificação:</strong> {{ pessoa.classificacao }}</p>
+            </div>
+        </div>
+        {% empty %}
+            <p>Nenhum cadastro encontrado.</p>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

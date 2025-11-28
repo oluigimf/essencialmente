@@ -1,4 +1,4 @@
-/* -------------------- CONFIGURAÇÕES GERAIS -------------------- */
+/* RESET E BASE */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@ body {
     font-family: "Josefin Sans", sans-serif;
     background-color: #EBFDE5;
     color: #666363;
+    overflow-x: hidden;
 }
 
 /* Paleta */
@@ -16,30 +17,31 @@ body {
     --primary-color: #258E00;
     --secondary-color: #CBF9BC;
     --background-main: #EBFDE5;
-    --text-color: #666363;
 }
+
 
 /* -------------------- HEADER -------------------- */
 header {
     width: 100%;
     background-color: var(--secondary-color);
-    padding: 10px 40px;
+    padding: 14px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px #00000015;
 }
 
 #fig_header img {
-    width: 180px;
+    width: 170px;
 }
 
 header .nav {
-    display: flex;
     list-style: none;
-    gap: 28px;
-    align-items: center;
+    display: flex;
+    gap: 30px;
     font-size: 18px;
+}
+
+header .nav li {
     cursor: pointer;
 }
 
@@ -57,55 +59,62 @@ header .nav li:hover {
     font-size: 16px;
 }
 
-#b1:hover {
-    opacity: 0.9;
-}
 
-/* -------------------- HERO SECTION -------------------- */
+/* -------------------- HERO -------------------- */
+/* Agora ocupa toda a primeira dobra (primeira tela) */
 main {
+    background-color: var(--background-main);
+    width: 100%;
+    min-height: 78vh; /* ocupa quase a tela inteira */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 60px 60px 40px;
+    padding: 40px 60px;
+    gap: 40px;
 }
 
 #s1_1 {
-    width: 45%;
+    width: 50%;
 }
 
 #p_main {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 500;
-    color: #333;
     margin-bottom: 20px;
+    color: #333;
+    line-height: 1.4;
 }
 
 #b2 {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 30px;
-    border-radius: 8px;
+    padding: 11px 35px;
+    border-radius: 10px;
     font-size: 18px;
+    border: none;
+    cursor: pointer;
 }
 
 #img_main {
-    width: 450px;
+    width: 440px;
 }
 
-/* -------------------- TÍTULO "Avaliações" -------------------- */
+
+/* -------------------- TÍTULO -------------------- */
 #titulo_main {
     text-align: center;
-    font-size: 30px;
-    color: #333;
+    font-size: 32px;
     margin-top: 20px;
+    color: #333;
 }
+
 
 /* -------------------- CARDS -------------------- */
 #avaliacoes {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 40px 20px;
+    padding: 40px 20px 70px;
     flex-wrap: wrap;
 }
 
@@ -124,7 +133,7 @@ main {
 }
 
 .fig_cards img {
-    width: 110px;
+    width: 120px;
 }
 
 .titulo_card {
@@ -144,12 +153,9 @@ main {
     padding: 8px 24px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.cards button a {
-    color: white;
-    text-decoration: none;
-}
 
 /* -------------------- FOOTER -------------------- */
 footer {
@@ -162,16 +168,14 @@ footer {
 }
 
 footer h4 {
-    font-weight: 600;
     margin-bottom: 12px;
 }
 
-#contato div,
-#footer2 div {
+#contato div {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .contato_imgs {
@@ -181,8 +185,8 @@ footer h4 {
 #redes_sociais img {
     width: 32px;
     margin-right: 10px;
-    cursor: pointer;
 }
+
 
 /* -------------------- RESPONSIVIDADE -------------------- */
 
@@ -192,25 +196,29 @@ footer h4 {
     main {
         flex-direction: column;
         text-align: center;
+        padding: 40px 20px;
+        min-height: auto;
+        gap: 20px;
     }
 
     #s1_1 {
         width: 100%;
-        margin-bottom: 30px;
     }
 
     #img_main {
-        width: 340px;
+        width: 360px;
     }
 
     header {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        padding: 14px 20px;
     }
 
     header .nav {
-        gap: 15px;
+        gap: 18px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -218,7 +226,7 @@ footer h4 {
 @media (max-width: 600px) {
 
     #p_main {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     #img_main {
@@ -227,12 +235,12 @@ footer h4 {
 
     .cards {
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
     }
 
     footer {
         flex-direction: column;
         gap: 25px;
-        text-align: left;
+        padding: 30px 20px;
     }
 }
