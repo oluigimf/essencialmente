@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'imc',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -76,12 +77,12 @@ WSGI_APPLICATION = 'essencialmente.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'essencialmente',
-        'USER': 'postgres',
+        'USER': 'root',
         'PASSWORD': '1234',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306'
     }
 }
 
