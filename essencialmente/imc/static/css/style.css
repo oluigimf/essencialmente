@@ -1,3 +1,21 @@
+:root {
+    --header-bg: #CBF9BC;
+    --primary-color: #258E00;
+    --secondary-color: #666363;
+    --main-bg: #EBFDE5;
+    --card-border: #CBF9BC;
+    --card-bg: white;
+    --footer-bg: #CBF9BC;
+    --font-family: "Josefin Sans", sans-serif;
+    --btn-width: 130px;
+    --btn-height: 50px;
+    --card-width: 420px;
+    --card-height: 470px;
+    --font-size-large: 1.2rem;
+    --font-size-medium: 1rem;
+    --font-size-small: 0.9rem;
+}
+
 *{
     font-family: "Josefin Sans", sans-serif;
 }
