@@ -1,3 +1,4 @@
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -24,62 +25,54 @@ body {
   max-width: 450px;
 }
 
+/* TÍTULOS */
 h1 {
   color: #666363;
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
 
-.options,
-.sexo {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
+/* LABELS */
 label {
   font-size: 0.95rem;
   color: #666363;
-  display: flex;
-  align-items: center;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  margin-right: 8px;
-  accent-color: #258e00;
-}
-
-.imc-info {
-  margin-bottom: 20px;
+  display: block;
+  margin-bottom: 5px;
   text-align: left;
 }
 
-.imc-info label {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: #666363;
-}
-
-input[type="number"] {
+/* CAMPOS DO DJANGO */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="file"],
+select {
   padding: 8px 10px;
-  margin-top: 5px;
+  margin-bottom: 14px;
   width: 100%;
   border: 1px solid #cbf9bc;
   border-radius: 10px;
   font-size: 0.95rem;
   color: #666363;
+  background-color: #ffffff;
 }
 
-input[type="number"]:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: #258e00;
   box-shadow: 0 0 0 2px rgba(37, 142, 0, 0.15);
 }
 
-button.calcular-btn {
+/* FILE INPUT */
+input[type="file"] {
+  padding: 8px;
+}
+
+/* BOTÃO */
+button.calcular-btn,
+button[type="submit"] {
   background-color: #258e00;
   color: #ffffff;
   border: none;
@@ -92,10 +85,21 @@ button.calcular-btn {
   font-weight: bold;
 }
 
-button.calcular-btn:hover {
+button.calcular-btn:hover,
+button[type="submit"]:hover {
   background-color: #1f7301;
 }
 
+/* MENSAGENS DE ERRO DO DJANGO */
+.errorlist {
+  color: #d30000;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  list-style: none;
+  text-align: left;
+}
+
+/* RESULTADO */
 .resultado {
   margin-top: 30px;
   font-size: 0.95rem;
@@ -119,16 +123,27 @@ button.calcular-btn:hover {
   margin-top: 10px;
 }
 
-/* responsivo */
+/* RESPONSIVO */
 @media (max-width: 480px) {
   .imc-container {
     margin: 20px;
     padding: 20px;
   }
+}
 
-  .options,
-  .sexo {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.input-field {
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  width: 100%;
+  border: 1px solid #cbf9bc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #666363;
+  background-color: #ffffff;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #258e00;
+  box-shadow: 0 0 0 2px rgba(37, 142, 0, 0.15);
 }
