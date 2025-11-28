@@ -65,7 +65,9 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur aliquam deserunt distinctio explicabo eius dolore alias officiis autem. Consectetur, cum.</p>
             <br>
             <center>
-                <button class="btn_card">Avaliar</button>
+                <form action="{% url 'avaliar_imc' %}" method="GET">
+                    <button type="submit" class="btn_card">Avaliar</button>
+                </form>
             </center>
         </section>
         <section class="card" id="card3">

@@ -13,11 +13,11 @@ def avaliar_imc(request):
             return redirect("imc:resultado_imc", cpf=obj.cpf)
     else:
         form = AvaliarIMCForm()
-    return render(request, "Avaliacao_IMC.html", {"form": form})
+    return render(request, "avaliarIMC.html", {"form": form})
 
 def resultado_imc(request, cpf):
     avaliacao = AvaliarIMC.objects.get(cpf=cpf)
-    return render(request, "Resultado_IMC.html", {"avaliacao": avaliacao})
+    return render(request, "avaliarIMC.html", {"avaliacao": avaliacao})
 
 def listar_cadastrados(request):
     sexo = request.GET.get("sexo")

@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
-    <link rel="stylesheet" href="/essencialmente/imc/static/css/avaliarIMC.css">
+    <link rel="stylesheet" href="{% static 'css/avaliarIMC.css' %}">
 </head>
 <body>
 
@@ -24,11 +25,11 @@
         
         <div class="sexo">
             <label for="homem">
-                <input type="radio" id="homem" name="sexo" value="homem" checked>
+                <input type="radio" id="homem" name="sexo" value="M" checked>
                 Homem
             </label>
             <label for="mulher">
-                <input type="radio" id="mulher" name="sexo" value="mulher">
+                <input type="radio" id="mulher" name="sexo" value="F">
                 Mulher
             </label>
         </div>
