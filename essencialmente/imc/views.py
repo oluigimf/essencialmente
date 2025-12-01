@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import AvaliarIMCForm
 from .models import AvaliarIMC
 
@@ -15,18 +15,20 @@ def avaliar_imc(request):
     if request.method == "POST":
         form = AvaliarIMCForm(request.POST, request.FILES)
         if form.is_valid():
-            avaliacao = form.save()     # calcula o IMC no save()
+            avaliacao = form.save()  # cálculo feito no save
             imc = avaliacao.valor_imc
             classificacao = avaliacao.classificacao
     else:
         form = AvaliarIMCForm()
 
-    return render(request, "avaliarIMC.html", {
+    context = {
         "form": form,
         "imc": imc,
         "classificacao": classificacao,
-        "avaliacao": avaliacao,
-    })
+        "avaliacao": avaliacao
+    }
+
+    return render(request, "avaliarIMC.html", context)
 
 #tela de listar os cadastrados
 def listar_cadastrados(request):

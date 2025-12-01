@@ -1,39 +1,76 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
-    
+    <script src="{% static 'js/avaliar.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/avaliarIMC.css' %}">
-  </head>
-  <body>
-    <div class="imc-container">
-      <h1>Calculadora de IMC</h1>
+</head>
+<body>
+    <a href="{% url 'index' %}">← Voltar</a>
+    <div class="container_principal">
 
-      <form id="form-imc" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="calcular-btn">Calcular</button>
-      </form>
-
-      {% if imc %}
-        <div class="resultado">
-            <h2>Seu IMC é: <strong>{{ imc }}</strong></h2>
-            <p>Classificação: <strong>{{ classificacao }}</strong></p>
-
+      <div class="top-bar"></div>
+      
+      <div class="imc-wrapper">
+        <h1 class="titulo">Calculadora de IMC</h1>
+        
+        <form id="form-imc" class="imc-form" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-grid">
+            {{ form.as_p }}
+            <button type="submit" class="btn-calcular">Calcular</button>
+          </div>
+        </form>
+        
+        {% if imc %}
+        <section class="resultado-container">
+          
+          <h2>Seu IMC é:</h2>
+          <div class="imc-valor">{{ imc }}</div>
+          
+          <p class="classificacao">
+            Classificação: <strong>{{ classificacao }}</strong>
+          </p>
+          
+          <div class="resultado-detalhes">
             {% if avaliacao %}
-                <p><strong>Peso:</strong> {{ avaliacao.peso }} kg</p>
-                <p><strong>Altura:</strong> {{ avaliacao.altura }} m</p>
-                <img src="{{ avaliacao.foto.url }}" width="180">
+            <p><strong>Peso:</strong> {{ avaliacao.peso }} kg</p>
+            <p><strong>Altura:</strong> {{ avaliacao.altura }} m</p>
+            <img class="foto-perfil" src="{{ avaliacao.foto.url }}">
             {% endif %}
-        </div>
+          </div>
+          <div class="texto-explicacao">
+
+            {% if classificacao == "Abaixo do normal" %}
+            Seu IMC está abaixo do recomendado. Considere buscar orientação nutricional.
+            
+            {% elif classificacao == "Normal" %}
+            Parabéns! Seu IMC está dentro da faixa saudável. Continue com bons hábitos!
+            
+            {% elif classificacao == "Sobrepeso" %}
+            Você está acima do peso ideal. Ajuste a alimentação e aumente sua rotina de exercícios.
+            
+            {% elif classificacao == "Obesidade grau I" %}
+            Atenção! Busque melhorar seus hábitos alimentares e sua rotina de atividades físicas.
+            
+            {% elif classificacao == "Obesidade grau II" %}
+            IMC elevado. Um acompanhamento com nutricionista é recomendado.
+            
+            {% elif classificacao == "Obesidade grau III" %}
+            IMC muito alto. H3momem é fundamental buscar orientação médica urgente.
+            
+            {% endif %}
+            
+          </div>
+          
+        </section>
         {% endif %}
+        
+      </div>
+      
     </div>
   </body>
 </html>

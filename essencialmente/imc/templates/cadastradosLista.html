@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrados IMC</title>
 
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="{% static 'css/lista.css' %}">
 </head>
 <body>
 
 <div class="container">
-    <h1>Lista de Avaliações de IMC</h1>
 
-    <!-- FILTRO POR SEXO -->
+    <h1>Lista de Avaliações de IMC</h1>
     <form method="GET" class="filtro-form">
         <label>Filtrar por sexo:</label>
         <select name="sexo" onchange="this.form.submit()">
@@ -37,6 +36,7 @@
                 <p><strong>Altura:</strong> {{ pessoa.altura }} m</p>
                 <p><strong>IMC:</strong> {{ pessoa.valor_imc }}</p>
                 <p><strong>Classificação:</strong> {{ pessoa.classificacao }}</p>
+                <p><strong>Escola:</strong> {{ pessoa.escola }}</p>
             </div>
         </div>
         {% empty %}

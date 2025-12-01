@@ -6,7 +6,7 @@ from imc.views import index, avaliar_imc, julia_zaffari, listar_cadastrados
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', index, name="index"),
     path('avaliar_imc/', avaliar_imc, name="avaliar_imc"),
     path('teste/', julia_zaffari, name='telaTesteJZ'),
     path("listar/", listar_cadastrados, name="listar_cadastrados")

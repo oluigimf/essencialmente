@@ -5,7 +5,7 @@ from decimal import Decimal
 class AvaliarIMC(models.Model):
     SEXO_CHOICES = [("M", "Masculino"), ("F", "Feminino")]
 
-    cpf = models.CharField(primary_key=True, max_length=11, unique=True, null=False, blank=False)
+    cpf = models.CharField(primary_key=True, max_length=14, unique=True, null=False, blank=False)
     nome = models.CharField(max_length=120, null=False, blank=False)
     sexo = models.CharField(max_length=1, choices=SEXO_CHOICES, null=False, blank=False)
     data_nascimento = models.DateField(null=False, blank=False)
