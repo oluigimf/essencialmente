@@ -1,94 +1,177 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-</head>
-<body>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Essencialmente</title>
+  </head>
+  <body>
     <header>
-        <figure>
-            <img class="logo" src="{% static 'images/logo.png' %}" alt="">
-        </figure>
-        <nav>
-            <ul>
-                <li>Avaliações</li>
-                <li>Relatórios</li>
-                <li>Normas Avaliação</li>
-                <li>Sobre</li>
-            </ul>
-            <button class="header_btn">Entrar</button>
-        </nav>
+      <figure>
+        <img
+          class="logo"
+          src="{% static 'images/logo.png' %}"
+          alt="Projeto Essencialmente Logo"
+        />
+      </figure>
+      <nav>
+        <ul>
+          <li>Avaliações</li>
+          <li>Relatórios</li>
+          <li>Normas Avaliação</li>
+          <li>Sobre</li>
+        </ul>
+        <button class="header_btn">Entrar</button>
+      </nav>
     </header>
+
     <main>
-        <section class="section_txt">
-            <h2>O acompanhamento de</h2>
-            <h2>crianças e adolecentes com</h2>
-            <h2>foco no seu bem-estar!</h2>
-            <br>
-            <button class="main_btn">Saiba mais</button>
-        </section>
-        <section class="section_img">
-            <figure>
-                <img class="main_img" src="{% static 'images/img-main.png' %}" alt="">
-            </figure>
-        </section>
+      <section class="section_txt">
+        <h2>O acompanhamento de</h2>
+        <h2>crianças e adolescentes com</h2>
+        <h2>foco no seu bem-estar!</h2>
+        <button class="main_btn">Saiba mais</button>
+      </section>
+      <section class="section_img">
+        <figure>
+          <img
+            class="main_img"
+            src="{% static 'images/img-main.png' %}"
+            alt="Médica e criança com foco no bem-estar"
+          />
+        </figure>
+      </section>
     </main>
-    <h1>Avaliações</h1>
-    <br>
+
     <section class="pagina2">
-        <br>
-        <section class="card" id="card1">
-            <br>
-            <center>
-                <img class="img_card" src="{% static 'images/img_card1.png' %}" alt="" width="165" height="140">
-            </center>
-            <h3>Avaliação de Antopometria e Composição Corporal</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur aliquam deserunt distinctio explicabo eius dolore alias officiis autem. Consectetur, cum.</p>
-            <br>
-            <center>
-                <button class="btn_card">Avaliar</button>
-            </center>
-        </section>
-        <section class="card" id="card2">
-            <br>
-            <center>
-                <img class="img_card" src="{% static 'images/img_card2.png' %}" alt="" width="165" height="140">
-            </center>
-            <h3>Avaliação IMC</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur aliquam deserunt distinctio explicabo eius dolore alias officiis autem. Consectetur, cum.</p>
-            <br>
-            <center>
-                <form action="{% url 'avaliar_imc' %}" method="GET">
-                    <button type="submit" class="btn_card">Avaliar</button>
-                </form>
-            </center>
-        </section>
-        <section class="card" id="card3">
-            <br>
-            <center>
-                <img class="img_card" src="{% static 'images/img_card3.png' %}" alt="" width="165" height="140">
-            </center>
-            <h3>Avaliação Abdominais</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur aliquam deserunt distinctio explicabo eius dolore alias officiis autem. Consectetur, cum.</p>
-            <br>
-            <center>
-                <button class="btn_card">Avaliar</button>
-            </center>
-        </section>
+      <h1>Avaliações</h1>
+      <div class="cards-container">
+        <div class="card" id="card1">
+          <center>
+            <img
+              class="img_card"
+              src="{% static 'images/img_card1.png' %}"
+              alt="Ícone de Antropometria"
+              width="165"
+              height="140"
+            />
+          </center>
+          <h3>Avaliação de Antopometria e Composição Corporal</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos
+            assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur
+            aliquam deserunt distinctio explicabo eius dolore alias officiis
+            autem. Consectetur, cum.
+          </p>
+          <div class="btn-wrapper">
+            <button class="btn_card">Avaliar</button>
+          </div>
+        </div>
+
+        <div class="card" id="card2">
+          <center>
+            <img
+              class="img_card"
+              src="{% static 'images/img_card2.png' %}"
+              alt="Ícone de IMC"
+              width="165"
+              height="140"
+            />
+          </center>
+          <h3>Avaliação IMC</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos
+            assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur
+            aliquam deserunt distinctio explicabo eius dolore alias officiis
+            autem. Consectetur, cum.
+          </p>
+          <div class="btn-wrapper">
+            <form
+              action="{% url 'avaliar_imc' %}"
+              method="GET"
+              style="margin: 0"
+            >
+              <button type="submit" class="btn_card">Avaliar</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card" id="card3">
+          <center>
+            <img
+              class="img_card"
+              src="{% static 'images/img_card3.png' %}"
+              alt="Ícone de Abdominais"
+              width="165"
+              height="140"
+            />
+          </center>
+          <h3>Avaliação Abdominais</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quos
+            assumenda harum cupiditate dolores dolorem, qui vero soluta tenetur
+            aliquam deserunt distinctio explicabo eius dolore alias officiis
+            autem. Consectetur, cum.
+          </p>
+          <div class="btn-wrapper">
+            <button class="btn_card">Avaliar</button>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-        <h2 class="h2_footer">Contato</h2>
-        <p class="p_footer">essencialmente@email.com</p>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h2 class="footer-title">Contato</h2>
+          <div class="footer-item">
+            <img
+              src="{% static 'images/icon-email.png' %}"
+              class="footer-icon"
+              alt="Ícone de Email"
+            />
+            <span>essencialmente@email.com</span>
+          </div>
+          <div class="footer-item">
+            <img
+              src="{% static 'images/icon-home.png' %}"
+              class="footer-icon"
+              alt="Ícone de Endereço"
+            />
+            <span>Rua La Salle, 56 Xanxerê - SC</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-title">Redes Sociais</h2>
+          <div class="footer-social">
+            <img
+              src="{% static 'images/insta.png' %}"
+              class="social-icon"
+              alt="Instagram"
+            />
+            <img
+              src="{% static 'images/whats.png' %}"
+              class="social-icon"
+              alt="WhatsApp"
+            />
+            <img
+              src="{% static 'images/twitter.png' %}"
+              class="social-icon"
+              alt="Twitter"
+            />
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
